@@ -1,6 +1,6 @@
 namespace ToDoList_New.Models;
 
-public class ToDoList
+public class ToDo
 {
     
     public int Id { get; set; }
