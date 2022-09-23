@@ -5,9 +5,9 @@ namespace ToDoList_New.Data;
 
 public class ToDoContext:DbContext
 {
-    public ToDoContext(DbContextOptions<ToDoContext> options):base(options)
+    protected void onConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        
+        optionsBuilder.UseInMemoryDatabase(databaseName: "ToDoDb");
     }
     
     public DbSet<ToDo> ToDoList { get; set; }
