@@ -1,11 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
+using ToDoList_New.Models;
 
 namespace ToDoList_New.Controllers;
 
-public class ToDoController:Controller
+public class ToDoController : Controller
 {
-    public string Index()
+    private readonly IToDoRepository _toDoRepository;
+
+    public ToDoController(IToDoRepository toDoRepository)
     {
-        return "hahahahaha";
+        _toDoRepository = toDoRepository;
+    }
+
+    [HttpGet]
+    public ActionResult<List<ToDo>> Get()
+    {
+        return Ok(_toDoRepository.GetToDoList());
     }
 }
