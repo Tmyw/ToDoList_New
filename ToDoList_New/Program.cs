@@ -1,15 +1,15 @@
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using ToDoList_New.Data;
 using ToDoList_New.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
 
-builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -28,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ToDo}/{action=Index}/{id?}");
+    pattern: "{controller=ToDo}/{action=Get}/{id?}");
 
 app.Run();
