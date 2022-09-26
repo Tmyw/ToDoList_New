@@ -24,3 +24,15 @@
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.pdb
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.genruntimeconfig.cache
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ref/ToDoList_New.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.csproj.CopyComplete
