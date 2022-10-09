@@ -24,12 +24,12 @@ public class ToDoRepository :IToDoRepository
         }
         
     }
-    public string? GetToDoList()
+    public List<ToDo> GetToDoList()
     {
         using (var context = new ToDoContext())
         {
-            
-            var list = context.ToDoList.ToString();
+
+            var list = context.ToDoList.AsQueryable().ToList();
             return list ;
             
         }
