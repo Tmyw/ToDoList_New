@@ -33,7 +33,19 @@ public class ToDoRepository :IToDoRepository
             return list ;
             
         }
-
-       
     }
+    
+    public List<ToDo> AddToDoList(int id, string taskName, bool isDone)
+    {
+        using (var context = new ToDoContext())
+        {
+            var addToDoList = new List<ToDo> { new ToDo() { Id = id, TaskName = taskName, IsDone = isDone } };
+           context.ToDoList.AddRange(addToDoList);
+           context.SaveChanges();
+           return GetToDoList();
+
+        }
+    }
+    
+    
 }

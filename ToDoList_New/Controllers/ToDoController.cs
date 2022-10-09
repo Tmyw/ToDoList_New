@@ -15,6 +15,13 @@ public class ToDoController : Controller
     [HttpGet]
     public ActionResult<List<ToDo>> Get()
     {
-        return Ok(_toDoRepository.GetToDoList());
+        return View(_toDoRepository.GetToDoList());
     }
+    
+    [HttpPost]
+    public ActionResult<List<ToDo>> Add(int id , string taskName, bool isDone)
+    {
+        return Ok(_toDoRepository.AddToDoList(id , taskName,  isDone));
+    }
+
 }
