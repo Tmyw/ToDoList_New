@@ -28,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ToDo}/{action=Get}/{id?}");
+    pattern: "{controller=ToDo}/{action}/{isDone?}");
 
 app.Run();

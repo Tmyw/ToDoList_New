@@ -5,11 +5,12 @@ namespace ToDoList_New.Data;
 
 public class ToDoRepository :IToDoRepository
 {
+    private readonly List<ToDo> toDoList;
     public ToDoRepository()
     {
         using (var context = new ToDoContext())
-        {
-            var toDoList=new List<ToDo>
+        { 
+            toDoList=new List<ToDo>
             {
                 
                     new ToDo { Id = 1,TaskName = "read a book", IsDone = true},
@@ -35,14 +36,15 @@ public class ToDoRepository :IToDoRepository
         }
     }
     
-    public List<ToDo> AddToDoList(int id, string taskName, bool isDone)
+    public List<ToDo> AddToDoList(string taskName)
     {
+        
         using (var context = new ToDoContext())
         {
-            var addToDoList = new List<ToDo> { new ToDo() { Id = id, TaskName = taskName, IsDone = isDone } };
-           context.ToDoList.AddRange(addToDoList);
-           context.SaveChanges();
-           return GetToDoList();
+            var toDo = new ToDo { Id = 4,TaskName = taskName, IsDone = false};
+            toDoList.Add(toDo);
+            context.SaveChanges();
+            return GetToDoList();
 
         }
     }
