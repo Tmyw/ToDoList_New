@@ -26,8 +26,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=ToDo}/{action}/{isDone?}");
+app.MapControllers();
 
 app.Run();

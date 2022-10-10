@@ -1,9 +1,10 @@
+using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList_New.Models;
 
 namespace ToDoList_New.Controllers;
 
-[Route("[controller]/[action]")]
+[Route("[controller]")]
 public class ToDoController : Controller
 {
     private readonly IToDoRepository _toDoRepository;
@@ -16,24 +17,27 @@ public class ToDoController : Controller
     [HttpGet]
     public ActionResult<List<ToDo>> Get()
     {
-        return Ok(_toDoRepository.GetToDoList());
+        return Ok(_toDoRepository.getToDoList());
     }
-    
-    [HttpGet("{isDone}")]
-    public ActionResult<List<ToDo>> Get(bool isDone)
-    {
-        var bools = _toDoRepository.GetToDoList().Select(x => x.IsDone = isDone).AsQueryable().ToList();
-        return Ok(bools);
-        
-    }
-    
-    [HttpPost]
-    public ActionResult<List<ToDo>> Add(string taskName)
-    {
-        return Ok(_toDoRepository.AddToDoList(taskName));
-        // return Ok(_toDoRepository.GetToDoList());
-    }
-    
-    
 
+    [HttpGet("{isDone}")]
+    public ActionResult<List<ToDo>> GetWithStatus(bool isDone)
+    {
+        var list = _toDoRepository.getToDoList().Where(x => x.IsDone == isDone).ToList();
+        return Ok(list);
+    }
+
+    [HttpPost]
+    public ActionResult<List<ToDo>> Add(JsonObject request)
+    {
+        _toDoRepository.addToDoList(request);
+        return RedirectToAction("Get");
+    }
+
+    [HttpPut("{id}")]
+    public ActionResult<List<ToDo>> edit(int id, JsonObject request)
+    {
+        var list = _toDoRepository.updateStatus(id, request);
+        return list;
+    }
 }
