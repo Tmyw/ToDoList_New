@@ -5,8 +5,6 @@ namespace ToDoList_New.Data;
 
 public class ToDoRepository : IToDoRepository
 {
-    public List<ToDo> toDoList;
-    public int i ;
     private readonly ToDoContext context;
 
     public ToDoRepository(ToDoContext context)
@@ -22,14 +20,12 @@ public class ToDoRepository : IToDoRepository
 
     public void AddToDoList(ToDo toDo)
     {
-        i++;
-        context.ToDoList.AddRange(new ToDo { Id = i, TaskName =toDo.TaskName, IsDone = false });
+        context.ToDoList.AddRange(new ToDo { TaskName =toDo.TaskName, IsDone = false });
         context.SaveChanges();
     }
 
     public object UpdateStatus(int id, ToDo toDo)
     {
-        i++;
         var checkExisting = context.ToDoList.Any(x => x.TaskName == toDo.TaskName && x.Id == toDo.Id);
         if (checkExisting)
         {
@@ -39,7 +35,6 @@ public class ToDoRepository : IToDoRepository
         }
        
         return new BadRequestObjectResult($"The request which id is {toDo.Id} and taskName is {toDo.TaskName} is not existing");
-        
         
     }
 

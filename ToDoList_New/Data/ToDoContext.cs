@@ -19,4 +19,12 @@ public class ToDoContext:DbContext
     //
     
     public DbSet<ToDo> ToDoList { get; set; } = null!;
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<ToDo>(t =>
+        {
+            t.Property(p => p.Id).ValueGeneratedOnAdd();
+        });
+
+    }
 }
