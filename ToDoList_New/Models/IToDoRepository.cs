@@ -4,7 +4,8 @@ namespace ToDoList_New.Models;
 
 public interface IToDoRepository
 {
-    public List<ToDo> getToDoList();
-    public void addToDoList(ToDo todo);
-    public List<ToDo> updateStatus(int id, JsonObject request);
+    public List<ToDo> GetToDoList();
+    public void AddToDoList(ToDo toDo);
+    public object UpdateStatus(int id, ToDo toDo);
+    public void Remove(int id);
 }
