@@ -1,5 +1,7 @@
+using System.Net;
 using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using ToDoList_New.Models;
 
 namespace ToDoList_New.Controllers;
@@ -35,15 +37,30 @@ public class ToDoController : Controller
     }
 
     [HttpPut("{id}")]
-    public ActionResult<List<ToDo>> edit(int id, [FromBody] ToDo toDO)
+    public async Task<ActionResult> Update(int id, [FromBody] ToDo toDo)
     {
-        var list = _toDoRepository.UpdateStatus(id, toDO);
-        return Ok(list);
+        if (!_toDoRepository.Validate(id))
+        {
+            return NotFound("");
+        }
+
+        var updateToDo = _toDoRepository.UpdateStatus(id, toDo);
+        if (updateToDo is  null)
+        {
+            return Accepted("");
+        }
+        return  updateToDo.Result;
     }
-    
-    [HttpPut("{id}")]
-    public void delete(int id)
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(int id)
     {
-        _toDoRepository.Remove(id);
+        if (_toDoRepository.Validate(id))
+        {
+            _toDoRepository.Remove(id);
+            return NoContent();
+        }
+
+        return NotFound("");
     }
 }

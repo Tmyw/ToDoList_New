@@ -24,17 +24,18 @@ public class ToDoRepository : IToDoRepository
         context.SaveChanges();
     }
 
-    public object UpdateStatus(int id, ToDo toDo)
+    public async Task<ActionResult> UpdateStatus(int id, ToDo toDo)
     {
         var checkExisting = context.ToDoList.Any(x => x.TaskName == toDo.TaskName && x.Id == toDo.Id);
         if (checkExisting)
         {
             var toBeUpdated = context.ToDoList.Single(x => x.Id == id);
             toBeUpdated.IsDone = toDo.IsDone;
-            return GetToDoList();
+            await context.SaveChangesAsync();
+            return null;
         }
        
-        return new BadRequestObjectResult($"The request which id is {toDo.Id} and taskName is {toDo.TaskName} is not existing");
+        return new BadRequestObjectResult($"The request which id is {toDo.Id} and taskName is {toDo.TaskName} does not exist") ;
         
     }
 
@@ -43,6 +44,11 @@ public class ToDoRepository : IToDoRepository
         var toDo = context.ToDoList.Single(x => x.Id == id);
         context.ToDoList.Remove(toDo);
         context.SaveChanges();
+    }
+    
+    public bool Validate(int id)
+    {
+        return context.ToDoList.Any(x => x.Id == id);;
     }
     
     
