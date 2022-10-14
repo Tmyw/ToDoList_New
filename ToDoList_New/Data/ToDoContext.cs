@@ -12,12 +12,7 @@ public class ToDoContext:DbContext
     protected ToDoContext()
     {
     }
-    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    // {
-    //     optionsBuilder.UseInMemoryDatabase(databaseName: "ToDoDb");
-    // }
-    //
-    
+
     public DbSet<ToDo> ToDoList { get; set; } = null!;
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
