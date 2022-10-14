@@ -5,11 +5,18 @@ namespace ToDoList_New.Data;
 
 public class ToDoContext:DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public ToDoContext(DbContextOptions options) : base(options)
     {
-        optionsBuilder.UseInMemoryDatabase(databaseName: "ToDoDb");
     }
-    
+
+    protected ToDoContext()
+    {
+    }
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    // {
+    //     optionsBuilder.UseInMemoryDatabase(databaseName: "ToDoDb");
+    // }
+    //
     
     public DbSet<ToDo> ToDoList { get; set; } = null!;
 }

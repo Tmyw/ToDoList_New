@@ -28,9 +28,9 @@ public class ToDoController : Controller
     }
 
     [HttpPost]
-    public ActionResult<List<ToDo>> Add(JsonObject request)
+    public ActionResult<List<ToDo>> Add([FromBody] ToDo toDO)
     {
-        _toDoRepository.addToDoList(request);
+        _toDoRepository.addToDoList(toDO);
         return RedirectToAction("Get");
     }
 
