@@ -18,25 +18,26 @@ public class ToDoRepository : IToDoRepository
         return list;
     }
 
-    public void AddToDoList(ToDo toDo)
+    public async Task<ToDo> AddToDoList(ToDo toDo)
     {
-        context.ToDoList.AddRange(new ToDo { TaskName =toDo.TaskName, IsDone = false });
-        context.SaveChanges();
+        var newToDo = new ToDo { TaskName = toDo.TaskName, IsDone = false };
+        context.ToDoList.AddRange(newToDo);
+        await context.SaveChangesAsync();
+        return newToDo;
     }
 
-    public async Task<ActionResult> UpdateStatus(int id, ToDo toDo)
+    public async Task<Object> UpdateStatus(int id, ToDo toDo)
     {
-        var checkExisting = context.ToDoList.Any(x => x.TaskName == toDo.TaskName && x.Id == toDo.Id);
+        var checkExisting = context.ToDoList.Any(x => string.Equals(x.TaskName, toDo.TaskName) && x.Id == id);
         if (checkExisting)
         {
             var toBeUpdated = context.ToDoList.Single(x => x.Id == id);
             toBeUpdated.IsDone = toDo.IsDone;
             await context.SaveChangesAsync();
-            return null;
+            return toBeUpdated;
         }
-       
-        return new BadRequestObjectResult($"The request which id is {toDo.Id} and taskName is {toDo.TaskName} does not exist") ;
-        
+
+        return new BadRequestObjectResult($"The request which id is {toDo.Id} and taskName is {toDo.TaskName}  does not exist");
     }
 
     public void Remove(int id)
@@ -50,7 +51,4 @@ public class ToDoRepository : IToDoRepository
     {
         return context.ToDoList.Any(x => x.Id == id);;
     }
-    
-    
-    
 }

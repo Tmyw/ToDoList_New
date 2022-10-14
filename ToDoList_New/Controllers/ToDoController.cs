@@ -32,35 +32,27 @@ public class ToDoController : Controller
     [HttpPost]
     public ActionResult<List<ToDo>> Add([FromBody] ToDo toDO)
     {
-        _toDoRepository.AddToDoList(toDO);
-        return RedirectToAction("Get");
+        var addToDoList = _toDoRepository.AddToDoList(toDO);
+
+        return Ok(addToDoList.Result);
     }
 
     [HttpPut("{id}")]
     public async Task<ActionResult> Update(int id, [FromBody] ToDo toDo)
+    {
+        var updateToDo = _toDoRepository.UpdateStatus(id, toDo);
+        return Accepted("");
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(int id)
     {
         if (!_toDoRepository.Validate(id))
         {
             return NotFound("");
         }
 
-        var updateToDo = _toDoRepository.UpdateStatus(id, toDo);
-        if (updateToDo is  null)
-        {
-            return Accepted("");
-        }
-        return  updateToDo.Result;
-    }
-
-    [HttpDelete("{id}")]
-    public async Task<ActionResult> Delete(int id)
-    {
-        if (_toDoRepository.Validate(id))
-        {
-            _toDoRepository.Remove(id);
-            return NoContent();
-        }
-
-        return NotFound("");
+        _toDoRepository.Remove(id);
+        return NoContent();
     }
 }
