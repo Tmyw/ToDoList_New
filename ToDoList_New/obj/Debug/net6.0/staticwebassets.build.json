@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "82PYTGABz9bAA8JHfe2hoAd1qwbCXv3uMzYC/aXgy9Q=",
+  "Hash": "4xATB8NnH4lCWGMOxlYQtOUC8ezbhNf9MDsBaaUeuJ0=",
   "Source": "ToDoList_New",
   "BasePath": "_content/ToDoList_New",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/bundle/ToDoList_New.styles.css",
-      "SourceId": "ToDoList_New",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/bundle/",
-      "BasePath": "_content/ToDoList_New",
-      "RelativePath": "ToDoList_New.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/bundle/ToDoList_New.styles.css"
-    },
-    {
-      "Identity": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/projectbundle/ToDoList_New.bundle.scp.css",
-      "SourceId": "ToDoList_New",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/projectbundle/",
-      "BasePath": "_content/ToDoList_New",
-      "RelativePath": "ToDoList_New.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/projectbundle/ToDoList_New.bundle.scp.css"
-    },
     {
       "Identity": "/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/wwwroot/css/site.css",
       "SourceId": "ToDoList_New",

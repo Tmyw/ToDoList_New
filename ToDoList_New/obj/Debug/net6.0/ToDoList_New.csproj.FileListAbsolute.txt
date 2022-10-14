@@ -12,13 +12,9 @@
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.AssemblyInfo.cs
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.csproj.CoreCompileInputs.cache
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.MvcApplicationPartsAssemblyInfo.cache
-/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.RazorAssemblyInfo.cache
-/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.RazorAssemblyInfo.cs
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/staticwebassets.build.json
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/staticwebassets.development.json
-/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/bundle/ToDoList_New.styles.css
-/Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/scopedcss/projectbundle/ToDoList_New.bundle.scp.css
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.dll
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/refint/ToDoList_New.dll
 /Users/tingting.zhou/Projects/TODO-project/ToDoList_New/ToDoList_New/obj/Debug/net6.0/ToDoList_New.pdb
